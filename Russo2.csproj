@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D3C5E79-F8B8-4B63-A8D2-BE3F19865F34}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Russo2</RootNamespace>
+    <AssemblyName>Russo2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icone.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Desktop\DLL\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="DGV2Printer-net40">
+      <HintPath>..\..\..\..\Desktop\DLL\DGV2Printer-net40.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\WindowsFormsApp8\WindowsFormsApp8\WindowsFormsApp8\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\WindowsFormsApp8\WindowsFormsApp8\WindowsFormsApp8\bin\Debug\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\Correios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="portalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>portalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="telaAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaAgenda.Designer.cs">
+      <DependentUpon>telaAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaAtCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaAtCliente.Designer.cs">
+      <DependentUpon>telaAtCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaAtResenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaAtResenha.Designer.cs">
+      <DependentUpon>telaAtResenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaAtVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaAtVenda.Designer.cs">
+      <DependentUpon>telaAtVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaAtVfinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaAtVfinal.Designer.cs">
+      <DependentUpon>telaAtVfinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaCliente.Designer.cs">
+      <DependentUpon>telaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConfirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConfirmar.Designer.cs">
+      <DependentUpon>telaConfirmar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaGrafCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaGrafCli.Designer.cs">
+      <DependentUpon>telaGrafCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaGrafP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaGrafP.Designer.cs">
+      <DependentUpon>telaGrafP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaGrafVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaGrafVenda.Designer.cs">
+      <DependentUpon>telaGrafVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaLisCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaLisCliente.Designer.cs">
+      <DependentUpon>telaLisCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaLisOrc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaLisOrc.Designer.cs">
+      <DependentUpon>telaLisOrc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaLisVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaLisVenda.Designer.cs">
+      <DependentUpon>telaLisVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaLogin.Designer.cs">
+      <DependentUpon>telaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="telaMenuADM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaMenuADM.Designer.cs">
+      <DependentUpon>telaMenuADM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaPesCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaPesCliente.Designer.cs">
+      <DependentUpon>telaPesCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaPesVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaPesVenda.Designer.cs">
+      <DependentUpon>telaPesVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaProcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaProcesso.Designer.cs">
+      <DependentUpon>telaProcesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaResenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaResenha.Designer.cs">
+      <DependentUpon>telaResenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaSplash.Designer.cs">
+      <DependentUpon>telaSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaTeste.Designer.cs">
+      <DependentUpon>telaTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaVenda.Designer.cs">
+      <DependentUpon>telaVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaVfinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaVfinal.Designer.cs">
+      <DependentUpon>telaVfinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaVisResenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaVisResenha.Designer.cs">
+      <DependentUpon>telaVisResenha.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="telaAgenda.resx">
+      <DependentUpon>telaAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaAtCliente.resx">
+      <DependentUpon>telaAtCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaAtResenha.resx">
+      <DependentUpon>telaAtResenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaAtVenda.resx">
+      <DependentUpon>telaAtVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaAtVfinal.resx">
+      <DependentUpon>telaAtVfinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaCliente.resx">
+      <DependentUpon>telaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConfirmar.resx">
+      <DependentUpon>telaConfirmar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaGrafCli.resx">
+      <DependentUpon>telaGrafCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaGrafP.resx">
+      <DependentUpon>telaGrafP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaGrafVenda.resx">
+      <DependentUpon>telaGrafVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaLisCliente.resx">
+      <DependentUpon>telaLisCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaLisOrc.resx">
+      <DependentUpon>telaLisOrc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaLisVenda.resx">
+      <DependentUpon>telaLisVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaLogin.resx">
+      <DependentUpon>telaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="telaMenuADM.resx">
+      <DependentUpon>telaMenuADM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaPesCliente.resx">
+      <DependentUpon>telaPesCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaPesVenda.resx">
+      <DependentUpon>telaPesVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaProcesso.resx">
+      <DependentUpon>telaProcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaResenha.resx">
+      <DependentUpon>telaResenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaSplash.resx">
+      <DependentUpon>telaSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaTeste.resx">
+      <DependentUpon>telaTeste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaVenda.resx">
+      <DependentUpon>telaVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaVfinal.resx">
+      <DependentUpon>telaVfinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaVisResenha.resx">
+      <DependentUpon>telaVisResenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\Correios\AtendeClienteService.wsdl" />
+    <None Include="Connected Services\Correios\Russo2.Correios.assuntoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.atualizaPagamentoNaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.atualizaRemessaAgrupadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.buscaServicosAdicionaisAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.buscaServicosValorDeclaradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.buscaServicosXServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.buscaTarifaValeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.calculaTarifaServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.consultarPedidosInformacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.consultaSROResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.mensagemRetornoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.motivoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.obterAssuntosPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.obterMensagemRetornoPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.obterMotivosPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.registrarPedidosInformacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.retorno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\Russo2.Correios.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="portalDataSet.xsc">
+      <DependentUpon>portalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="portalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>portalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="portalDataSet.xss">
+      <DependentUpon>portalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\msg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow.png" />
+    <None Include="Connected Services\Correios\configuration91.svcinfo" />
+    <None Include="Connected Services\Correios\configuration.svcinfo" />
+    <None Include="Connected Services\Correios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\green.png" />
+    <None Include="Resources\blue.png" />
+    <None Include="Resources\fundo.jpeg" />
+    <None Include="Resources\cliImg.png" />
+    <Content Include="icone.ico" />
+    <Content Include="Resources\icone.ico" />
+    <None Include="Resources\icons8-bar-chart-30.png" />
+    <None Include="Resources\imgFecharRed.png" />
+    <None Include="Resources\imgMini.png" />
+    <None Include="Resources\imgGraf2.png" />
+    <None Include="Resources\imgPro.png" />
+    <Content Include="Resources\lupa.png" />
+    <None Include="Resources\rol.gif" />
+    <None Include="Resources\Rolling.gif" />
+    <None Include="Resources\mn.png" />
+    <None Include="Resources\ext.png" />
+    <None Include="Resources\ex.png" />
+    <None Include="Resources\mini.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\portal_l.jpg" />
+    <None Include="Resources\portal_l1.jpg" />
+    <None Include="Resources\red.png" />
+    <None Include="Resources\orange.png" />
+    <Content Include="Resources\user.png" />
+    <None Include="Resources\vis.png" />
+    <Content Include="Resources\visi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Correios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatorio\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
